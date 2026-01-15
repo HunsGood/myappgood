@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 확률 챌린지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .mode-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .mode-btn {
+            padding: 25px 40px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .mode-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .mode-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .beginner-btn {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            box-shadow: 0 8px 20px rgba(56, 239, 125, 0.4);
+        }
+
+        .beginner-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(56, 239, 125, 0.6);
+        }
+
+        .advanced-btn {
+            background: linear-gradient(135deg, #ee0979, #ff6a00);
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.4);
+        }
+
+        .advanced-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 106, 0, 0.6);
+        }
+
+        .mode-description {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .emoji {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .coming-soon {
+            background: linear-gradient(135deg, #a8a8a8, #636363);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+            box-shadow: 0 8px 20px rgba(99, 99, 99, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 확률 챌린지</h1>
+        <p class="subtitle">당신의 운을 시험해보세요!</p>
+        
+        <div class="mode-selection">
+            <button class="mode-btn beginner-btn" onclick="location.href='cho1.html'">
+                <span class="emoji">🌟</span>
+                초보 모드
+                <div class="mode-description">5단계 확률 게임 (50% → 33% → 25% → 20% → 16%)</div>
+            </button>
+            
+            <button class="mode-btn advanced-btn coming-soon" onclick="alert('🚀 고급 모드는 곧 출시됩니다!')">
+                <span class="emoji">🔥</span>
+                고급 모드
+                <div class="mode-description">더 어려운 도전이 곧 찾아옵니다!</div>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

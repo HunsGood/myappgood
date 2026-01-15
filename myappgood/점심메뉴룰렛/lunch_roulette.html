@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍽️ 점심 메뉴 룰렛</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ 점심 메뉴 룰렛</h1>
+        <p class="subtitle">오늘 점심은 행운에 맡겨보세요!</p>
+        
+        <div class="roulette-container">
+            <div class="pointer"></div>
+            <canvas id="rouletteCanvas" width="300" height="300"></canvas>
+            <div class="center-circle">🍴</div>
+        </div>
+
+        <button class="btn" id="startBtn">돌리기!</button>
+
+        <div class="result" id="result">버튼을 눌러 메뉴를 선택하세요</div>
+
+        <div class="footer">
+            룰렛을 돌려 오늘의 점심 메뉴를 결정하세요!
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

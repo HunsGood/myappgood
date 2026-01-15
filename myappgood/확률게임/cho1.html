@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 1단계 - 50% 도전</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .stage-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .probability {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+        }
+
+        .instruction {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .choice-btn {
+            flex: 1;
+            max-width: 250px;
+            padding: 40px 30px;
+            font-size: 1.8em;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choice-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .choice-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .choice-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .btn-1 {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-1:hover {
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+        }
+
+        .btn-2 {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
+        }
+
+        .btn-2:hover {
+            box-shadow: 0 15px 40px rgba(0, 242, 254, 0.6);
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            min-height: 40px;
+        }
+
+        .success {
+            color: #38ef7d;
+            animation: successPulse 0.5s ease;
+        }
+
+        .fail {
+            color: #f5576c;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .home-btn {
+            margin-top: 30px;
+            padding: 12px 30px;
+            font-size: 1em;
+            background: #888;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: #666;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stage-badge">🌟 1단계</div>
+        <h1>50% 확률 도전!</h1>
+        <div class="probability">50%</div>
+        <p class="instruction">2개 중 하나를 선택하세요!</p>
+        
+        <div class="button-container">
+            <button class="choice-btn btn-1" onclick="checkAnswer(1)">🎈<br>선택 1</button>
+            <button class="choice-btn btn-2" onclick="checkAnswer(2)">🎁<br>선택 2</button>
+        </div>
+        
+        <div class="result" id="result"></div>
+        <button class="home-btn" onclick="location.href='main.html'">🏠 홈으로</button>
+    </div>
+
+    <script>
+        const correctAnswer = Math.floor(Math.random() * 2) + 1;
+        
+        function checkAnswer(choice) {
+            const resultDiv = document.getElementById('result');
+            const buttons = document.querySelectorAll('.choice-btn');
+            
+            buttons.forEach(btn => btn.disabled = true);
+            
+            if (choice === correctAnswer) {
+                resultDiv.className = 'result success';
+                resultDiv.innerHTML = '🎉 정답입니다! 다음 단계로 이동합니다...';
+                
+                setTimeout(() => {
+                    location.href = 'cho2.html';
+                }, 2000);
+            } else {
+                resultDiv.className = 'result fail';
+                resultDiv.innerHTML = '😢 아쉽게 실패했습니다! 다시 도전해보세요!';
+                
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>

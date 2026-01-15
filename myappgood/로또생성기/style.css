@@ -1,0 +1,128 @@
+:root {
+            --bg: #f2f4f7;
+            --card: #ffffff;
+            --text: #222;
+            --subtext: #555;
+            --desc: #6b7280;
+        }
+
+        body.dark {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f1f5f9;
+            --subtext: #cbd5f5;
+            --desc: #9ca3af;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Noto Sans KR", Arial, sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: var(--card);
+            width: 100%;
+            max-width: 480px;
+            margin: 20px;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: var(--text);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .mode-btn, .refresh-btn {
+            background: none;
+            border: 2px solid var(--subtext);
+            border-radius: 20px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        .results {
+            margin-top: 10px;
+        }
+
+        .game {
+            background: rgba(0,0,0,0.05);
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 14px;
+        }
+
+        body.dark .game {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .game-title {
+            color: var(--subtext);
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .game-desc {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--desc);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .ball {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .yellow { background: #fbc400; }
+        .blue   { background: #2a6edb; }
+        .red    { background: #e53935; }
+        .gray   { background: #8e8e8e; }
+        .green  { background: #43a047; }
+
+        footer {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--subtext);
+        }
+
+        @media (max-width: 420px) {
+            h1 { font-size: 18px; }
+            .ball { width: 32px; height: 32px; font-size: 13px; }
+        }
