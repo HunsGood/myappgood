@@ -51,7 +51,7 @@
             gap: 8px;
         }
 
-        .mode-btn, .refresh-btn {
+        .mode-btn, .refresh-btn, .home-btn {
             background: none;
             border: 2px solid var(--subtext);
             border-radius: 20px;
@@ -59,6 +59,11 @@
             cursor: pointer;
             font-size: 13px;
             color: var(--text);
+        }
+
+        .home-btn {
+            background: var(--subtext);
+            color: var(--card);
         }
 
         .results {
