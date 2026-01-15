@@ -156,6 +156,53 @@
             transform: none;
             box-shadow: 0 8px 20px rgba(99, 99, 99, 0.4);
         }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .subtitle, .instruction {
+                font-size: 1em;
+                margin-bottom: 30px;
+            }
+            .probability {
+                font-size: 2.5em;
+            }
+            .mode-btn, .choice-btn {
+                padding: 20px;
+                font-size: 1.2em;
+            }
+            .button-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .choice-btn {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .probability {
+                font-size: 2em;
+            }
+            .mode-btn, .choice-btn {
+                padding: 15px;
+                font-size: 1em;
+            }
+            .stage-badge {
+                font-size: 1em;
+                padding: 8px 20px;
+            }
+        }
     </style>
 </head>
 <body>

@@ -128,6 +128,33 @@
         }
 
         @media (max-width: 420px) {
-            h1 { font-size: 18px; }
-            .ball { width: 32px; height: 32px; font-size: 13px; }
+            .container {
+                padding: 16px;
+                margin: 10px;
+            }
+            h1 { 
+                font-size: 18px; 
+            }
+            .mode-btn, .refresh-btn, .home-btn {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+            .ball { 
+                width: 32px; 
+                height: 32px; 
+                font-size: 13px; 
+            }
+            .game-title {
+                font-size: 13px;
+            }
+            .game-desc {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 360px) {
+            .top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }

@@ -258,6 +258,57 @@
             0%, 100% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.5); }
             50% { box-shadow: 0 0 50px rgba(102, 126, 234, 0.8); }
         }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .subtitle, .instruction {
+                font-size: 1em;
+                margin-bottom: 30px;
+            }
+            .probability {
+                font-size: 2.5em;
+            }
+            .mode-btn, .choice-btn {
+                padding: 20px;
+                font-size: 1.2em;
+            }
+            .button-container {
+                grid-template-columns: repeat(2, 1fr); /* On tablets, show 2 columns */
+                flex-direction: column;
+                gap: 15px;
+            }
+            .choice-btn {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .probability {
+                font-size: 2em;
+            }
+            .mode-btn, .choice-btn {
+                padding: 15px;
+                font-size: 1em;
+            }
+            .stage-badge {
+                font-size: 1em;
+                padding: 8px 20px;
+            }
+            .button-container {
+                grid-template-columns: 1fr; /* On phones, stack to 1 column */
+            }
+        }
     </style>
 </head>
 <body>
